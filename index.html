@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+
+<script type="text/javascript" src="script.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<body>
+
+<div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header">
+          <h1 class="text-center">Register Account</h1>
+      </div>
+      <div class="modal-body">
+          <form class="form col-md-12 center-block" onsubmit="handleRegistration()">
+            <div class="form-group">
+              <input type="text" class="form-control input-lg" placeholder="Email" onKeyUp="userNameGetVal()" id="username">
+
+              <p id="user1error"></p>
+              <p id="user2error"></p>
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control input-lg" onKeyUp="passGetVal()" id="password" placeholder="Password">
+               <p id="pass1error"></p>
+              <p id="pass2error"></p>
+              <p id="pass3error"></p>
+              <p id="pass4error"></p>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary btn-lg btn-block">Register</button>
+            </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+      </div>
+  </div>
+  </div>
+</div>
+</body>
+</html>
