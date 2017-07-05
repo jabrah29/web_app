@@ -136,11 +136,7 @@ function handleRegistration(){
   if(userNameGetVal() && passGetVal()){
     var obj={user_name:username, user_password:password}
     database.ref("Account").push(obj);
+  }else{
+    alert("Please correct all issues before creating account")
   }
-}
-
-if(usernamePass ==false || passwordPass ==false){
-    submitButton.disabled=true
-}else if (usernamePass ==true && passwordPass ==true){
-    submitButton.disabled=false
 }
