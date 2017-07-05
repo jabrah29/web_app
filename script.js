@@ -7,7 +7,7 @@ var usernamePass=false
 
 
 password=document.getElementById("password")
-
+var database=firebase.database()
 function passGetVal(){
     var error1 = document.getElementById("pass1error");
     var error2 = document.getElementById("pass2error");
@@ -119,9 +119,7 @@ function handleRegistration(){
 
   if(userNameGetVal() && passGetVal()){
     var obj={user_name:username, user_password:password}
-    var database = firebase.database().ref("Tester").once('value').then(function(snapshot){
-        console.log(snapshot)
-    })
+    database.ref("Account").set(obj);
 
     
 
