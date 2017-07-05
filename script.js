@@ -121,7 +121,7 @@ var error2 = document.getElementById("user2error");
   	usernamePass=false
   }else{
   	usernamePass=true
-  }ß
+  }
 
   return usernamePass
 
@@ -133,7 +133,7 @@ function handleRegistration(){
 
 	if(userNameGetVal() && passGetVal()){
 		var obj={user_name:username, user_password:password}
-
+     alert(obj.user_name)
 		var database = firebase.database();
 		  database.ref('users').push(obj);
 
