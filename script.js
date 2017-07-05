@@ -30,52 +30,57 @@ function passGetVal(){
     var error3= document.getElementById("pass3error");
     var error4=document.getElementById("pass4error")
     var edValue = document.getElementById("password");
+    var check1 = false
+    var check2= false;
+    var check3= false;
+    var check4=false;
+    var check5=false;
       var s = edValue.value;
       if(edValue.value.length>0){
       if(!s.match(/\d+/g) || !s.match(/[a-z]/) || !s.match(/[A-Z]/) || edValue.value.length<8){
         if(!s.match(/\d+/g)){
           error1.style.color="red"
           error1.innerText="Must contain at least 1 digit"
-          passwordPass=false;
+          check1=false;
 
         }else{
           error1.innerText=""
-          passwordPass=true
+          check1=true
         } if(!s.match(/[a-z]/)){
           error2.style.color="red"
           error2.innerText="Must contain lowercase letter"
-          passwordPass=false
+          check2=false
 
         }else{
           error2.innerText=""
-          passwordPass=true
+          check2=true
         }
 
         if (!s.match(/[A-Z]/) ){
           error3.style.color="red"
           error3.innerText="Must contain uppercase letter"
-          passwordPass=false
+          check3=false
   
         }else{
           error3.innerText=""
-          passwordPass=true
+          check3=true
         } 
 
         if (edValue.value.length<8){
           error4.style.color="red"
           error4.innerText="Must be longer than 8 characters"
-          passwordPass=false
+          check4=false
 
         }else{
           error4.innerText=""
-          passwordPass=true
+          check4=true
         }
       }else{
         error1.innerText=""
         error2.innerText=""
         error3.innerText=""
         error4.innerText=""
-        passwordPass=true
+        check5=true
       }
   }else{
     error2.innerText=""
@@ -83,7 +88,15 @@ function passGetVal(){
     error3.innerText=""
     error4.innerText=""
   }
-  return passwordPass
+  if(check1&&check2&&check3&&check4){
+    return true
+  }else{
+    if(check5){
+      return true;
+    }
+    return false
+  }
+  
 }
 
 console.log(usernamePass)
@@ -92,6 +105,7 @@ function userNameGetVal(){
   var error1 = document.getElementById("user1error");
 var error2 = document.getElementById("user2error");
     var edValue = document.getElementById("username");
+
       var s = edValue.value;
       if(edValue.value.length>0){
       if(!s.match(expr) || edValue.value.length <5){
