@@ -19,7 +19,7 @@ password=document.getElementById("password")
 var database=firebase.database()
 
 window.onload= function(){
-  firebase.database.ref("Account").once('value', function(snapshot){
+  database.ref("Account").once('value').then(function(snapshot){
     snapshot.foreach(function(childSnapShot){
        console.log(childSnapShot.val())
     });
