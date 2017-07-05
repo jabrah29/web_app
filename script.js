@@ -136,6 +136,7 @@ function handleRegistration(){
   if(userNameGetVal() && passGetVal()){
     var obj={user_name:username, user_password:password}
     database.ref("Account").push(obj);
+    alert("Account created!")
   }else{
     alert("Please correct all issues before creating account")
   }
