@@ -130,10 +130,13 @@ var error2 = document.getElementById("user2error");
 function handleRegistration(){
 	username=document.getElementById("username").value
 	password=document.getElementById("password").value
-
+  if (!firebase.apps.length) {
+      firebase.initializeApp(config);
+  }
 	if(userNameGetVal() && passGetVal()){
-		var database = firebase.database();
-		  database.ref('users').set({
+    var newChildRef = firebase.push();
+
+		  newChildRef.set({
         user_name:username,
         user_password:password
       });
