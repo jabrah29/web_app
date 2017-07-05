@@ -125,10 +125,12 @@ var error2 = document.getElementById("user2error");
   return usernamePass
 
 }
-      var defaultApp=firebase.initializeApp(config);
+
 function handleRegistration(){
 	username=document.getElementById("username").value
 	password=document.getElementById("password").value
+        var defaultApp=firebase.initializeApp(config);
+
 	if(userNameGetVal() && passGetVal()){
 		var obj={user_name:username, user_password:password}
 
