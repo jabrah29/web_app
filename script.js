@@ -17,7 +17,6 @@ var rootRef = firebase.database().ref();
     messagingSenderId: "910404203499"
   };
 
-  var defaultApp=firebase.initializeApp(config);
 
 
 password=document.getElementById("password")
@@ -121,7 +120,7 @@ var error2 = document.getElementById("user2error");
   	usernamePass=false
   }else{
   	usernamePass=true
-  }
+  }ß
 
   return usernamePass
 
@@ -132,6 +131,8 @@ function handleRegistration(){
 	password=document.getElementById("password").value
 	if(userNameGetVal() && passGetVal()){
 		var obj={user_name:username, user_password:password}
+      var defaultApp=firebase.initializeApp(config);
+
 		var database = defaultApp.database();
 		  database.ref('users/').set(obj);
 
