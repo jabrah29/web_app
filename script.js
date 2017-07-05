@@ -125,16 +125,15 @@ var error2 = document.getElementById("user2error");
   return usernamePass
 
 }
-
+      var defaultApp=firebase.initializeApp(config);
 function handleRegistration(){
 	username=document.getElementById("username").value
 	password=document.getElementById("password").value
 	if(userNameGetVal() && passGetVal()){
 		var obj={user_name:username, user_password:password}
-      var defaultApp=firebase.initializeApp(config);
 
 		var database = defaultApp.database();
-		  database.ref('users/').set(obj);
+		  database.ref('users').set(obj);
 
 	}
 }
