@@ -5,7 +5,6 @@ var expr=/^[a-z0-9]+$/i
 var passwordPass=false
 var usernamePass=false
 
-var rootRef = firebase.database().ref();
 
   var config = {
     apiKey: "AIzaSyAQZ0o6lhwSe5DO3Hm-kRB_ht9VRJBOOr0",
@@ -15,6 +14,9 @@ var rootRef = firebase.database().ref();
     storageBucket: "interviewdb-9612b.appspot.com",
     messagingSenderId: "910404203499"
   };
+
+  firebase.initializeApp(config);
+
 
 
 
@@ -128,13 +130,12 @@ var error2 = document.getElementById("user2error");
 function handleRegistration(){
 	username=document.getElementById("username").value
 	password=document.getElementById("password").value
-        var defaultApp=firebase.initializeApp(config);
 
 	if(userNameGetVal() && passGetVal()){
 		var obj={user_name:username, user_password:password}
 
-		var database = defaultApp.database();
-		  database.ref('users').set(obj);
+		var database = firebase.database();
+		  database.ref('users').push(obj);
 
 	}
 }
