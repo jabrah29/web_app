@@ -1,4 +1,3 @@
-import * as firebase from 'firebase'
 var userName=""
 var password=""
 var expr=/^[a-z0-9]+$/i
