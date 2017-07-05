@@ -4,7 +4,16 @@ var expr=/^[a-z0-9]+$/i
 
 var passwordPass=false
 var usernamePass=false
+var config = {
+    apiKey: "AIzaSyAQZ0o6lhwSe5DO3Hm-kRB_ht9VRJBOOr0",
+    authDomain: "interviewdb-9612b.firebaseapp.com",
+    databaseURL: "https://interviewdb-9612b.firebaseio.com",
+    projectId: "interviewdb-9612b",
+    storageBucket: "interviewdb-9612b.appspot.com",
+    messagingSenderId: "910404203499"
+  };
 
+  firebase.initializeApp(config);
 
 password=document.getElementById("password")
 var database=firebase.database()
