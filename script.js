@@ -1,9 +1,9 @@
   var userName=""
 var password=""
-var expr=/^[a-z0-9]+$/i
-
+var expr=/^[a-z0-9]+$/i 
 var passwordPass=false
 var usernamePass=false
+var submitButton=document.getElementById("submitButton")
 var config = {
     apiKey: "AIzaSyAQZ0o6lhwSe5DO3Hm-kRB_ht9VRJBOOr0",
     authDomain: "interviewdb-9612b.firebaseapp.com",
@@ -136,8 +136,11 @@ function handleRegistration(){
   if(userNameGetVal() && passGetVal()){
     var obj={user_name:username, user_password:password}
     database.ref("Account").push(obj);
-
-    
-
   }
+}
+
+if(usernamePass ==false || passwordPass ==false){
+    submitButton.disabled=true
+}else if (usernamePass ==true && passwordPass ==true){
+    submitButton.disabled=false
 }
