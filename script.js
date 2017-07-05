@@ -128,7 +128,7 @@ function handleRegistration(){
 
   if(userNameGetVal() && passGetVal()){
     var obj={user_name:username, user_password:password}
-    database.ref("Account").set(obj);
+    database.ref("Account").push(obj);
 
     
 
