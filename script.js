@@ -19,11 +19,10 @@ password=document.getElementById("password")
 var database=firebase.database()
 
 window.onload= function(){
-  database.ref("Account").once('value').then(function(snapshot){
-    snapshot.foreach(function(childSnapShot){
-       console.log(childSnapShot.val())
-    });
-  });
+  var commentsRef = database.ref('Account');
+  commentsRef.on('child_added', function(data) {
+    console.log(data)
+});
 }
 function passGetVal(){
     var error1 = document.getElementById("pass1error");
