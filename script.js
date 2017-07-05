@@ -119,9 +119,9 @@ function handleRegistration(){
 
   if(userNameGetVal() && passGetVal()){
     var obj={user_name:username, user_password:password}
-    var database = firebase.database();
+    var database = firebase.database().ref();
     console.log(database)
-      database.ref('users').set(obj);
+      database.child('users').set("test");
 
   }
 }
