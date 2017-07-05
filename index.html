@@ -181,10 +181,8 @@ function handleRegistration(){
     var obj={user_name:username, user_password:password}
     var database = firebase.database();
     console.log(database)
-      database.ref('users').set({
-        user_name:username,
-        user_password:password
-      });
+    database.ref().child("account").set(obj)
+     
 
   }
 }
