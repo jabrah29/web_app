@@ -17,6 +17,14 @@ var config = {
 
 password=document.getElementById("password")
 var database=firebase.database()
+
+window.onload= function(){
+  firebase.database.ref("Account").once('value', function(snapshot){
+    snapshot.foreach(function(childSnapShot){
+       console.log(childSnapShot.val())
+    });
+  });
+}
 function passGetVal(){
     var error1 = document.getElementById("pass1error");
     var error2 = document.getElementById("pass2error");
