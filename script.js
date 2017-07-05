@@ -134,7 +134,7 @@ function handleRegistration(){
   password=document.getElementById("password").value
   var usrCheck=userNameGetVal()
   var passCheck=passGetVal()
-  if(usrCheck && passCheck{
+  if(usrCheck && passCheck){
     var obj={user_name:username, user_password:password}
     database.ref("Account").push(obj);
     alert("Account created!")
