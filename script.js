@@ -132,12 +132,13 @@ var error2 = document.getElementById("user2error");
 function handleRegistration(){
   username=document.getElementById("username").value
   password=document.getElementById("password").value
-
-  if(userNameGetVal() && passGetVal()){
+  var usrCheck=userNameGetVal()
+  var passCheck=passGetVal()
+  if(usrCheck && passCheck{
     var obj={user_name:username, user_password:password}
     database.ref("Account").push(obj);
     alert("Account created!")
-  }else{
+  }else if(usrCheck==false || passCheck==false){
     alert("Please correct all issues before creating account")
   }
 }
